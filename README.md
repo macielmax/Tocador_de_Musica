@@ -23,7 +23,7 @@ O objetivo é praticar manipulação do DOM, eventos e estilização responsiva,
 
 ## 📸 Demonstração
 
-
+https://macielmax.github.io/Tocador_de_Musica/
 ---
 
 ## 📂 Estrutura de Pastas
