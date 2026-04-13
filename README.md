@@ -22,7 +22,7 @@ O objetivo é praticar manipulação do DOM, eventos e estilização responsiva,
 ---
 
 ## 📸 Demonstração
-https://github.com/macielmax/Tocador_de_Musica.git
+
 
 ---
 
