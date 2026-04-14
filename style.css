@@ -1,0 +1,11 @@
+body {
+    background-image: linear-gradient(
+        #354554,
+        #1F242A
+        );
+    height: 100vh;
+    color: white;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+}
