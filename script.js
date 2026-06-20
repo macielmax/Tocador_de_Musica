@@ -4,10 +4,25 @@ const song = document.getElementById('audio');
 const cover = document.getElementById('cover');
 const play = document.getElementById('play');
 
-songName.innerText = 'Sou Feliz';
-let isPlaying = false;
+const possoclamar = {
+    songName : 'Posso Clamar',
+    artist : 'Groove Gospel',
+    file : 'posso_clamar'
+};
+const quandojesusestendeuasuamao = {
+    songName : 'Quando Jesus Estendeu a sua mão',
+    artist : 'Groove Gospel',
+    file : 'quando_jesus_estendeu_a_sua_mão'
+};
+const soufeliz = {
+    songName : 'Sou Feliz',
+    artist : 'Groove Gospel',
+    file : 'sou_feliz'
+};
 
-const 
+let isPlaying = false;
+const playlist = [possoclamar, quandojesusestendeuasuamao, soufeliz];
+let index = 0;
 
 function playSong(){
     play.querySelector('.bi').classList.remove('bi-play-circle-fill');
@@ -31,6 +46,15 @@ function playPauseDecide(){
         playSong();
     }
 }
+
+function initializeSong(){
+    cover.src = 'img/${playlist[index].file}.webp';
+    song.src = 'songs/${playlist[index].file}.mp3';
+    songName.innerText = playlist[index].songName;
+    bandName.innerText = playlist[index].artist;
+}
+
+initializeSong();
 
 play.addEventListener('click', playPauseDecide);
 
