@@ -3,6 +3,8 @@ const bandName = document.getElementById('band-name');
 const song = document.getElementById('audio');
 const cover = document.getElementById('cover');
 const play = document.getElementById('play');
+const next = document.getElementById('next');
+const previous = document.getElementById('previous');
 
 const possoclamar = {
     songName : 'Posso Clamar',
@@ -12,7 +14,7 @@ const possoclamar = {
 const quandojesusestendeuasuamao = {
     songName : 'Quando Jesus Estendeu a sua mão',
     artist : 'Groove Gospel',
-    file : 'quando_jesus_estendeu_a_sua_mão'
+    file : 'quando_jesus_ estendeu_a_ sua_mão'
 };
 const soufeliz = {
     songName : 'Sou Feliz',
@@ -48,14 +50,40 @@ function playPauseDecide(){
 }
 
 function initializeSong(){
-    cover.src = 'img/${playlist[index].file}.webp';
-    song.src = 'songs/${playlist[index].file}.mp3';
+    cover.src = `img/${playlist[index].file}.png`;
+    song.src = `songs/${playlist[index].file}.mp3`;
     songName.innerText = playlist[index].songName;
     bandName.innerText = playlist[index].artist;
+}
+
+function previousSong(){
+    if(index === 0){
+        index = playlist.length;
+    }
+    else{
+        index -= 1;
+    }
+    initializeSong();
+    playSong();
+    
+}
+
+function nextSong(){
+    if(index === playlist.length - 1){
+        index = 0;
+    }
+    else{
+        index += 1;
+    }
+    initializeSong();
+    playSong();
+    
 }
 
 initializeSong();
 
 play.addEventListener('click', playPauseDecide);
+previous.addEventListener('click', previousSong);
+next.addEventListener('click', nextSong);
 
 
