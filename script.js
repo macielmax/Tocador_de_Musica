@@ -14,7 +14,7 @@ const possoclamar = {
 const quandojesusestendeuasuamao = {
     songName : 'Quando Jesus Estendeu a sua mão',
     artist : 'Groove Gospel',
-    file : 'quando_jesus_ estendeu_a_ sua_mão'
+    file : 'quando_jesus_estendeu_a_sua_mao'
 };
 const soufeliz = {
     songName : 'Sou Feliz',
