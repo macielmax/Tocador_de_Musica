@@ -50,8 +50,8 @@ function playPauseDecide(){
 }
 
 function initializeSong(){
-    cover.src = `img${playlist[index].file}.png`;
-    song.src = `songs${playlist[index].file}.mp3`;
+    cover.src = `img/${playlist[index].file}.png`;
+    song.src = `songs/${playlist[index].file}.mp3`;
     songName.innerText = playlist[index].songName;
     bandName.innerText = playlist[index].artist;
 }
