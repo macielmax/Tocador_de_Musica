@@ -9,21 +9,21 @@ const previous = document.getElementById('previous');
 const possoclamar = {
     songName : 'Posso Clamar',
     artist : 'Groove Gospel',
-    file : 'posso_clamar'
+    file : 'possoclamar'
 };
-const quandojesusestendeuasuamao = {
+const quandojesus = {
     songName : 'Quando Jesus Estendeu a sua mão',
     artist : 'Groove Gospel',
-    file : 'quando_jesus_estendeu_a_sua_mao'
+    file : 'quandojesus'
 };
 const soufeliz = {
     songName : 'Sou Feliz',
     artist : 'Groove Gospel',
-    file : 'sou_feliz'
+    file : 'soufeliz'
 };
 
 let isPlaying = false;
-const playlist = [possoclamar, quandojesusestendeuasuamao, soufeliz];
+const playlist = [possoclamar, quandojesus, soufeliz];
 let index = 0;
 
 function playSong(){
