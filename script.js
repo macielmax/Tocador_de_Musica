@@ -7,6 +7,7 @@ const next = document.getElementById('next');
 const previous = document.getElementById('previous');
 const currentProgress = document.getElementById ('current-progress');
 const progressContainer = document.getElementById ('progress-container');
+const shuffleButton = document.getElementById ('shuffle');
 
 const possoclamar = {
     songName : 'Posso Clamar',
@@ -25,7 +26,9 @@ const soufeliz = {
 };
 
 let isPlaying = false;
-const playlist = [possoclamar, quandojesus, soufeliz];
+let isShuffled = false;
+const originalPlaylist = [possoclamar, quandojesus, soufeliz];
+let sortedPlaylist = [...originalPlaylist];
 let index = 0;
 
 function playSong(){
@@ -52,15 +55,15 @@ function playPauseDecide(){
 }
 
 function initializeSong(){
-    cover.src = `img/${playlist[index].file}.png`;
-    song.src = `songs/${playlist[index].file}.mp3`;
-    songName.innerText = playlist[index].songName;
-    bandName.innerText = playlist[index].artist;
+    cover.src = `img/${sortedPlaylist[index].file}.png`;
+    song.src = `songs/${sortedPlaylist[index].file}.mp3`;
+    songName.innerText = sortedPlaylist[index].songName;
+    bandName.innerText = sortedPlaylist[index].artist;
 }
 
 function previousSong(){
     if(index === 0){
-        index = playlist.length;
+        index = sortedPlaylist.length;
     }
     else{
         index -= 1;
@@ -71,7 +74,7 @@ function previousSong(){
 }
 
 function nextSong(){
-    if(index === playlist.length - 1){
+    if(index === sortedPlaylist.length - 1){
         index = 0;
     }
     else{
@@ -94,6 +97,14 @@ function jumpTo(event){
     song.currentTime = jumpToTime;
 }
 
+function shuffleButtonClick(){
+    if(isShuffled === false){
+        isShuffled = true;
+        shuffleArray();
+    }
+
+}
+
 initializeSong();
 
 play.addEventListener('click', playPauseDecide);
@@ -101,4 +112,4 @@ previous.addEventListener('click', previousSong);
 next.addEventListener('click', nextSong);
 song.addEventListener('timeupdate', updateProgressBar);
 progressContainer.addEventListener('click', jumpTo);
-
+shuffleButton.addEventListener('click', shuffleButtonClick);
